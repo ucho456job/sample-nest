@@ -20,7 +20,7 @@ const config = {
       layout: {
         type: 'pattern',
         pattern:
-          '[%d{yyyy/MM/dd hh.mm.ss.SSS}],[%p],[%X{ip}],[%X{method} %X{uri}],[%X{file} %X{line}:%X{column} %X{function}],%m,\n"httpRequest":%x{httpRequest}}',
+          '[%d{yyyy/MM/dd hh.mm.ss.SSS}],%m,\n"httpRequest":%x{httpRequest}}\n\n',
         tokens: {
           httpRequest: (event: LoggingEvent) => {
             return JSON.stringify({

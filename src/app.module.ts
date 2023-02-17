@@ -4,8 +4,10 @@ import { AppService } from './app.service';
 import { LoggerModule } from './common/log4js/logger.module';
 import { LoggerMiddleware } from './common/log4js/logger.middleware';
 import { LoggingInterceptor } from '@algoan/nestjs-logging-interceptor';
+import { UserModule } from './user/user.module';
+import { CommentModule } from './comment/comment.module';
 @Module({
-  imports: [LoggerModule],
+  imports: [LoggerModule, UserModule, CommentModule],
   controllers: [AppController],
   providers: [
     AppService,
