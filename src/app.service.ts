@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
+  async getHello() {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     return 'Hello World!';
   }
 }

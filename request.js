@@ -14,7 +14,8 @@ const run = async () => {
   try {
     const userProcess = axios.request(makeOption('user'));
     const commentProcess = axios.request(makeOption('comment'));
-    Promise.all([commentProcess, userProcess]);
+    const helloProcess = axios.request(makeOption(''));
+    Promise.all([commentProcess, userProcess, helloProcess]);
     return 'suceess';
   } catch (e) {
     console.log(e);
